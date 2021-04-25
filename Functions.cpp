@@ -74,7 +74,7 @@ void showGame(const Player* const player_1, const Player* const player_2) {
 		for (int j = 0; j < COL; j++) {
 			SetConsoleTextAttribute(h, (((1 << 4) | 12)));
 			Space(1);
-			//cout << player_2->notShowPole[x][y]; // скрытое поле
+			//cout << player_2->notShowPole[i][j]; // скрытое поле
 			cout << player_2->pole[i][j]; // открытое поле
 		}
 		SetConsoleTextAttribute(h, (((14 << 4) | 2)));
