@@ -31,6 +31,7 @@ int main()
 			showGame(player_1, player_2);
 			if (player_2->getLoss()) break;
 			if (!shotPlayer(player_1, player_2))
+			//if (!shotBot(player_1, player_2))  // Раскомметировать эту строку для игры ботов(и закомменитровать предыдущую)
 				isMyRound = false;
 			player_2->setLoss();
 		}
