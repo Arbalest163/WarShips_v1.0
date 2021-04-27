@@ -74,8 +74,8 @@ void showGame(const Player* const player_1, const Player* const player_2) {
 		for (int j = 0; j < COL; j++) {
 			SetConsoleTextAttribute(h, (((1 << 4) | 12)));
 			Space(1);
-			//cout << player_2->notShowPole[i][j]; // скрытое поле
-			cout << player_2->pole[i][j]; // открытое поле
+			cout << player_2->notShowPole[i][j]; // скрытое поле
+			//cout << player_2->pole[i][j]; // открытое поле
 		}
 		SetConsoleTextAttribute(h, (((14 << 4) | 2)));
 		Space(4);
@@ -158,6 +158,7 @@ bool shot(int x, int y, Player & enemy) {
 
 	if (enemy.pole[x][y] == SHIP_SYMBOL) {
 		enemy.pole[x][y] = HIT_SYMBOL;
+		enemy.notShowPole[x][y] = HIT_SYMBOL;
 		bool flag = false;
 		for (int i = 0; i < 4; i++) {
 			if (&enemy.pole[x][y] == &*enemy.deck_4.m_ship[i]) {
